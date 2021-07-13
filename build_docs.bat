@@ -4,3 +4,4 @@ call make.bat html
 cd ..
 Xcopy /E /I sphinx-documentation\build\html .\docs /y
 rmdir /Q /S sphinx-documentation\build
+start docs\tech.html

@@ -1,0 +1,265 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xml:lang="" lang="" version="-//W3C//DTD XHTML 1.1//EN" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <title>Technology Stack &mdash; web-app-plans 0.0.1 documentation</title>
+  
+
+  
+
+  
+
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'/>
+    <link rel="stylesheet" href="_static/css/pdj.css" type="text/css" />
+
+  
+    <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="web-app-plans 0.0.1 documentation" href="index.html"/>
+        <link rel="next" title="Contributing" href="contributing.html"/>
+        <link rel="prev" title="UNHM Programming Club Web App Design Document" href="index.html"/>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="cache-control" content="public" />
+    <meta name="robots" content="follow, all" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Add jQuery library -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+  </head>
+
+  <body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="fa fa-home"> web-app-plans </a>
+        <div role="search">
+	  <form id ="rtd-search-form" class="wy-form"
+		action="search.html" method="get">
+	    <input type="text" name="q" placeholder="Search docs" />
+	    <input type="hidden" name="check_keywords" value="yes" />
+	    <input type="hidden" name="area" value="default" />
+	  </form>
+	</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	
+          
+          
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">A Proposed Technology Stack</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#stack-diagram">Stack Diagram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#description">Description</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+</ul>
+
+          
+        
+
+      </div>
+      &nbsp;
+    </nav>
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      <nav class="wy-nav-top" id="barra-mobile" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="#">Porão do Juca</a>
+      </nav>
+
+      <div class="wy-nav-content">
+	<div class="fundo-claro">
+	</div>
+	<div class="fundo-escuro">
+	</div>
+
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+	    
+	    <!-- <ul class="wy-breadcrumbs"> -->
+	    <!--   <li><a href="#">Docs</a> &raquo;</li> -->
+
+	    <!--   <li>Features</li> -->
+	    <!--   <li class="wy-breadcrumbs-aside"> -->
+
+	    <!-- 	<a href="_sources/index.txt" rel="nofollow"> View page source</a> -->
+
+	    <!--   </li> -->
+	    <!-- </ul> -->
+	    <!-- <hr/> -->
+	  </div>
+
+          <div role="main" class="">
+
+	    <div id="content" class="hfeed entry-container hentry">
+  <div class="section" id="technology-stack">
+<h1>Technology Stack<a class="headerlink" href="#technology-stack" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="stack-diagram">
+<h2>Stack Diagram<a class="headerlink" href="#stack-diagram" title="Permalink to this headline">¶</a></h2>
+<p>click nodes to visit links in new tabs!!</p>
+<div class="graphviz"><object data="_images/graphviz-e56f85ad0e948cc2b66cddc48aebcf32b00ef7ea.svg" type="image/svg+xml" class="graphviz">
+<p class="warning">digraph techstack {
+
+   node [shape = &quot;component&quot;];
+
+   caller [label = &quot;Scheduled API calls&quot;, href=&quot;https://www.digitalocean.com/community/tutorials/how-to-use-web-apis-in-python-3&quot;, target=&quot;_blank&quot;];
+   redditAPIRules [label=&quot;Reddit API Rules&quot;, href=&quot;https://github.com/reddit-archive/reddit/wiki/API&quot; target=&quot;_blank&quot;];
+   production [label=&quot;Production&quot;];
+   testing [label=&quot;Testing&quot;, href=&quot;https://docs.djangoproject.com/en/3.2/topics/testing/&quot;, target=&quot;_blank&quot;];
+   processor [label = &quot;Process API data&quot;];
+
+   node [label = &quot;technology&quot;, style=&quot;filled&quot; fillcolor=&quot;#1f0477&quot;, shape=&quot;cylinder&quot;, fontcolor=&quot;white&quot;];
+
+   reddit [label=&quot;Reddit API&quot;, href=&quot;https://www.reddit.com/dev/api&quot; target=&quot;_blank&quot; alt=&quot;Reddit API documentation&quot;];
+   django [label=&quot;Django&quot;, href=&quot;https://docs.djangoproject.com/en/3.2/&quot;, target=&quot;_blank&quot;];
+   sqlite [label=&quot;SQLite&quot;, href=&quot;https://www.sqlite.org/index.html&quot;, target=&quot;_blank&quot; fill=&quot;blue&quot;];
+   apache [label=&quot;Apache&quot;, href=&quot;https://httpd.apache.org/&quot; target=&quot;_blank&quot;];
+   modwsgi [label=&quot;mod_wsgi&quot;, href=&quot;https://modwsgi.readthedocs.io/en/develop/&quot; target=&quot;_blank&quot;];
+   autodoc [label=&quot;sphinx-autodoc&quot;, href=&quot;https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html&quot;, target=&quot;_blank&quot;];
+   sphinx [label=&quot;sphinx documentation&quot;, href=&quot;https://www.sphinx-doc.org&quot;,  target=&quot;_blank&quot;];
+   html [label=&quot;HTML/CSS&quot;];
+   github [label=&quot;github pages&quot;];
+
+   node [shape=&quot;ellipse&quot;, style=&quot;filled&quot;, fillcolor=&quot;#e5e6ce&quot;, fontcolor=&quot;black&quot;];
+
+   models [label=&quot;Models&quot;, href=&quot;https://docs.djangoproject.com/en/3.2/topics/db/models/&quot;, target=&quot;_blank&quot;];
+   database [label=&quot;Database&quot;];
+   view [label=&quot;View&quot;, href=&quot;https://docs.djangoproject.com/en/3.2/#the-view-layer&quot;, target=&quot;_blank&quot;];
+   template [label=&quot;Template&quot;, href=&quot;https://docs.djangoproject.com/en/3.2/topics/templates/&quot;, target=&quot;_blank&quot;];
+
+   codebase [label=&quot;Code Base&quot;, href=&quot;https://www.github.com/unhm-programming-team&quot; target=&quot;_blank&quot;];
+
+   reddit -&gt; redditAPIRules;
+
+   database -&gt; models [label=&quot;populates&quot;];
+   database -&gt; sqlite;
+   template -&gt; html;
+   django -&gt; view
+   django -&gt; models
+   django -&gt; database
+   django -&gt; template
+
+   view -&gt; template [label = &quot;serves&quot;];
+   template -&gt; html [label = &quot;generates&quot;];
+   models -&gt; template [label = &quot;populates&quot;];
+   caller -&gt; reddit [label=&quot;queries&quot;];
+   caller -&gt; processor [label=&quot;processes&quot;];
+   processor -&gt; database [label=&quot;fills&quot;];
+
+   codebase -&gt; autodoc;
+   autodoc -&gt; sphinx [label=&quot;made with&quot;];
+   production -&gt; apache [label=&quot;backend&quot;];
+   production -&gt; modwsgi [label=&quot;python/apache&quot;];
+   codebase -&gt; production;
+   codebase -&gt; testing;
+   codebase -&gt; django [label=&quot;mostly written using&quot;];
+
+   sphinx -&gt; github [label=&quot;hosted statically&quot;];
+
+}</p></object></div>
+<div class="graphviz"><object data="_images/graphviz-21b40ae1a08a063805bf71dbfe9072908c123707.svg" type="image/svg+xml" class="graphviz">
+<p class="warning">digraph legend {
+   fillcolor=&quot;gray&quot;;
+   rankdir=UD;
+
+   label = &quot;Legend&quot;;
+   shape = &quot;rectangle&quot;;
+   color = &quot;black&quot;;
+
+   technology [label = &quot;technology&quot;, style=&quot;filled&quot; fillcolor=&quot;#1f0477&quot;, shape=&quot;cylinder&quot;, fontcolor=&quot;white&quot;];
+   ourcode [label=&quot;our code&quot;, shape=&quot;ellipse&quot;, style=&quot;filled&quot;, fillcolor=&quot;#e5e6ce&quot;];
+   process [shape=&quot;component&quot;, label=&quot;process&quot;];
+}</p></object></div>
+</div>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://www.djangoproject.com/start/">Django</a> is proposed to be the main driver of this web-application. Most of our members are familiar with Python which is why we should try a Python based stack. <a class="reference external" href="https://www.sqlite.org/index.html">SQLite</a> is proposed to be the database because it runs out of the box with Django, though Django offers support for other dbs as well, including <a class="reference external" href="https://www.postgresql.org/">PostgreSQL</a> through <a class="reference external" href="https://www.psycopg.org/">psycopg</a>. <a class="reference external" href="https://www.sphinx-doc.org/en/master/">Sphinx</a> makes decent documentation. Django has <a class="reference external" href="https://docs.djangoproject.com/en/3.2/topics/testing/">some built in testing capabilities</a>.</p>
+<p><a class="reference external" href="https://docs.djangoproject.com/en/3.2/howto/deployment/wsgi/modwsgi/">Hosting with Apache and mod_wsgi</a> is a tried and tested deployment strategy.</p>
+</div>
+</div>
+
+
+	    </div>
+            <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="contributing.html" class="btn btn-neutral float-right" title="Contributing">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="UNHM Programming Club Web App Design Document"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, klm127.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/jucacrispim/sphinx_pdj_theme">theme</a> provided by <a href="http://poraodojuca.net">Porão do Juca</a>.
+
+</footer>
+	</div>
+	</div>
+	  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js">
+
+    </script>
+    <script type="text/javascript" src="_static/underscore.js">
+
+    </script>
+    <script type="text/javascript" src="_static/doctools.js">
+
+    </script>
+
+  
+
+   <script type="text/javascript"
+           src="_static/js/theme.js"></script>
+
+   <script type="text/javascript"
+           src="_static/js/pdj.js"></script>
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+  </body>
+</html>

@@ -1,0 +1,24 @@
+
+
+Sphinx documentation: https://www.sphinx-doc.org/en/master/
+
+
+add this back when relevant:
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+
+
+Stubs
+=====
+
+Code Phases
+-----------
+
+E.g. - phase 1, api caller and parser gets developed and tested separately from django core app, phase 2 views/models/templates get written, maybe simultaneously as production being worked on phase 3 testing/refactoring/restyling
+

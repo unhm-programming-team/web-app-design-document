@@ -1,0 +1,5 @@
+<map id="foo" name="foo">
+<area shape="poly" id="node2" href="https://www.reddit.com/dev/api" target="_blank" title="Reddit API Documentation" alt="" coords="466,29,459,22,438,15,406,10,365,7,320,5,275,7,234,10,201,15,181,22,173,29,181,37,201,43,234,49,275,52,320,53,365,52,406,49,438,43,459,37"/>
+<area shape="poly" id="node3" href="https://github.com/reddit-archive/reddit/wiki/API" target="_blank" title="Reddit API Rules" alt="" coords="691,29,686,22,672,15,650,10,622,7,591,5,560,7,532,10,509,15,495,22,490,29,495,37,509,43,532,49,560,52,591,53,622,52,650,49,672,43,686,37"/>
+<area shape="poly" id="node5" href="https://www.sphinx-doc.org" target="_blank" title="sphinx" alt="" coords="1003,29,1001,22,994,15,984,10,971,7,957,5,943,7,930,10,920,15,914,22,911,29,914,37,920,43,930,49,943,52,957,53,971,52,984,49,994,43,1001,37"/>
+</map>
