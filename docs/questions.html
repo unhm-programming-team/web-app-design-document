@@ -1,0 +1,303 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xml:lang="" lang="" version="-//W3C//DTD XHTML 1.1//EN" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <title>Design Decision Questions &mdash; web-app-plans 0.0.1 documentation</title>
+  
+
+  
+
+  
+
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'/>
+    <link rel="stylesheet" href="_static/css/pdj.css" type="text/css" />
+
+  
+    <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="web-app-plans 0.0.1 documentation" href="index.html"/>
+        <link rel="next" title="Contributing" href="contributing.html"/>
+        <link rel="prev" title="Technology Stack" href="tech.html"/>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="cache-control" content="public" />
+    <meta name="robots" content="follow, all" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Add jQuery library -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+  </head>
+
+  <body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="fa fa-home"> web-app-plans </a>
+        <div role="search">
+	  <form id ="rtd-search-form" class="wy-form"
+		action="search.html" method="get">
+	    <input type="text" name="q" placeholder="Search docs" />
+	    <input type="hidden" name="check_keywords" value="yes" />
+	    <input type="hidden" name="area" value="default" />
+	  </form>
+	</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	
+          
+          
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tech.html">A Proposed Technology Stack</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tech.html#stack-diagram">Stack Diagram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tech.html#description">Description</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Design Decision Questions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#which-subreddits">Which subreddits?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-do-we-define-what-is-popular-content">How do we define what is “popular” content?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-often-will-we-scrape">How often will we scrape?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-scraped-data-will-we-store">What scraped data will we store?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#is-this-a-public-web-app-or-do-we-need-some-type-of-user-registration">Is this a public web app or do we need some type of user registration?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-are-we-going-to-organize-our-scraped-data-into-a-database">How are we going to organize our scraped data into a database?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+</ul>
+
+          
+        
+
+      </div>
+      &nbsp;
+    </nav>
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      <nav class="wy-nav-top" id="barra-mobile" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="#">Porão do Juca</a>
+      </nav>
+
+      <div class="wy-nav-content">
+	<div class="fundo-claro">
+	</div>
+	<div class="fundo-escuro">
+	</div>
+
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+	    
+	    <!-- <ul class="wy-breadcrumbs"> -->
+	    <!--   <li><a href="#">Docs</a> &raquo;</li> -->
+
+	    <!--   <li>Features</li> -->
+	    <!--   <li class="wy-breadcrumbs-aside"> -->
+
+	    <!-- 	<a href="_sources/index.txt" rel="nofollow"> View page source</a> -->
+
+	    <!--   </li> -->
+	    <!-- </ul> -->
+	    <!-- <hr/> -->
+	  </div>
+
+          <div role="main" class="">
+
+	    <div id="content" class="hfeed entry-container hentry">
+  <div class="section" id="design-decision-questions">
+<h1>Design Decision Questions<a class="headerlink" href="#design-decision-questions" title="Permalink to this headline">¶</a></h1>
+<p>We have to make some decisions about some of the app requirements.</p>
+<div class="section" id="which-subreddits">
+<h2>Which subreddits?<a class="headerlink" href="#which-subreddits" title="Permalink to this headline">¶</a></h2>
+<p>We could maintain a table with a list of subreddits. Subreddit names could be the primary key. Columns include content categorizations which become link tags in the  final website feed.</p>
+<p>We could append to this table over time, but should find 20 or so subreddits to start with.</p>
+<p>E.g.:</p>
+<table class="colwidths-given docutils align-default" id="id1">
+<caption><span class="caption-text">Proposed table structure for subreddit targets</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>subreddit (primary key)</p></th>
+<th class="head"><p>language</p></th>
+<th class="head"><p>content type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>r/programming</p></td>
+<td><p>all</p></td>
+<td><p>general</p></td>
+</tr>
+<tr class="row-odd"><td><p>r/python</p></td>
+<td><p>python</p></td>
+<td><p>language</p></td>
+</tr>
+<tr class="row-even"><td><p>r/gamedev</p></td>
+<td><p>all</p></td>
+<td><p>game development</p></td>
+</tr>
+<tr class="row-odd"><td><p>r/raspberry_pi</p></td>
+<td><p>python</p></td>
+<td><p>hardware</p></td>
+</tr>
+<tr class="row-even"><td><p>r/webdev</p></td>
+<td><p>all</p></td>
+<td><p>web</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="how-do-we-define-what-is-popular-content">
+<h2>How do we define what is “popular” content?<a class="headerlink" href="#how-do-we-define-what-is-popular-content" title="Permalink to this headline">¶</a></h2>
+<p>This could be as simple as finding the top posts of the day in each subreddit.</p>
+<p>A better solution could involve taking the top X posts in each subreddit for the day and finding the standard deviation, defining popular content as the posts with the highest positive standard deviation. So content with 200 upvotes in a subreddit where top posts typically get 10 upvotes would rank higher than one with 1,000 upvotes in a subreddit where top posts typically get 800 upvotes.</p>
+<p>If we include the posts which are not eligible for our feed/database (like text posts) for calculating the standard deviation for each subreddit, we will wind up with a different selection of content than if we just pulled top eligible posts for the day from each subreddit.</p>
+</div>
+<div class="section" id="how-often-will-we-scrape">
+<h2>How often will we scrape?<a class="headerlink" href="#how-often-will-we-scrape" title="Permalink to this headline">¶</a></h2>
+<p>Probably depend on how the API access works. Probably should refresh the website content at least daily, so I would think minimum once daily API call.</p>
+</div>
+<div class="section" id="what-scraped-data-will-we-store">
+<h2>What scraped data will we store?<a class="headerlink" href="#what-scraped-data-will-we-store" title="Permalink to this headline">¶</a></h2>
+<p>At a minimum, we need URL and standard deviation (if we go that route). Whether we need to store actual upvotes for tracking of stdev over time I suppose depends on how much data we can get per API call, and whether we can generate the standard deviation at the time we make the api call, and whether we need that information, before we put it in the database.</p>
+<p>I suggest we store the underlying article information, NOT the reddit information, unless we have to. The upvote data would calculated into a standard deviation score. The subreddit source would be displayed as the corresponding language/content type from the subreddit table.</p>
+<p>I think it would be good if there is no apparent connection to reddit - the web app is not regurgitating reddit, it’s using reddit to identify quality articles of interest and then display THOSE articles, not reddit posts.</p>
+</div>
+<div class="section" id="is-this-a-public-web-app-or-do-we-need-some-type-of-user-registration">
+<h2>Is this a public web app or do we need some type of user registration?<a class="headerlink" href="#is-this-a-public-web-app-or-do-we-need-some-type-of-user-registration" title="Permalink to this headline">¶</a></h2>
+<p>I suggest it be public with no registration off the bat. Maybe that’s a feature we add in version 2 along with saved customizations of feed, comments, etc.</p>
+</div>
+<div class="section" id="how-are-we-going-to-organize-our-scraped-data-into-a-database">
+<h2>How are we going to organize our scraped data into a database?<a class="headerlink" href="#how-are-we-going-to-organize-our-scraped-data-into-a-database" title="Permalink to this headline">¶</a></h2>
+<p>I think we need to figure out what we will be getting from the API before we can definitively answer this question, but maybe something like this:</p>
+<table class="colwidths-given docutils align-default" id="id2">
+<caption><span class="caption-text">Proposed .CSV structure for subreddit targets</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>postId (primary key)</p></th>
+<th class="head"><p>subreddit (Foreign Key)</p></th>
+<th class="head"><p>title</p></th>
+<th class="head"><p>author</p></th>
+<th class="head"><p>linkType</p></th>
+<th class="head"><p>url</p></th>
+<th class="head"><p>date</p></th>
+<th class="head"><p>stdev</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0001</p></td>
+<td><p>r/webdev</p></td>
+<td><p>A 3D Hover Effect Using CSS Transforms</p></td>
+<td><p>Ryan Finni</p></td>
+<td><p>article</p></td>
+<td><p><a class="reference external" href="https://letsbuildui.dev/articles/a-3d-hover-effect-using-css-transforms">https://letsbuildui.dev/articles/a-3d-hover-effect-using-css-transforms</a></p></td>
+<td><p>6/20/2021</p></td>
+<td><p>-1.5</p></td>
+</tr>
+<tr class="row-odd"><td><p>0002</p></td>
+<td><p>r/python</p></td>
+<td><p>Top 3 Most Important Fourier Transforms in Python</p></td>
+<td><p>Mr. P Solver</p></td>
+<td><p>video</p></td>
+<td><p><a class="reference external" href="https://www.youtube.com/watch?v=GKsCWivmlHg">https://www.youtube.com/watch?v=GKsCWivmlHg</a></p></td>
+<td><p>7/19/2021</p></td>
+<td><p>1.5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+	    </div>
+            <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="contributing.html" class="btn btn-neutral float-right" title="Contributing">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="tech.html" class="btn btn-neutral" title="Technology Stack"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, klm127.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/jucacrispim/sphinx_pdj_theme">theme</a> provided by <a href="http://poraodojuca.net">Porão do Juca</a>.
+
+</footer>
+	</div>
+	</div>
+	  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js">
+
+    </script>
+    <script type="text/javascript" src="_static/underscore.js">
+
+    </script>
+    <script type="text/javascript" src="_static/doctools.js">
+
+    </script>
+
+  
+
+   <script type="text/javascript"
+           src="_static/js/theme.js"></script>
+
+   <script type="text/javascript"
+           src="_static/js/pdj.js"></script>
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+  </body>
+</html>
